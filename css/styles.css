@@ -135,16 +135,22 @@ a {
 	margin-bottom: 24px;
 }
 .title_decor {
-	background-image: url(../img/txt_decor/Vector.svg);
-	background-repeat: no-repeat;
-	background-position: 0 100%;
-	background-size: 100% 30%;
-	padding-bottom: 12px;
+	position: relative;
 	display: inline-block;
-	min-width: 45%;
+	padding-bottom: 0.2em; /* відступ для декору */
 }
-.projm-tittle .title_decor {
-	min-width: 75%;
+.title_decor::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: 0.15em; /* трохи вище нижньої лінії тексту */
+	width: 110%;
+	height: 0.5em;
+
+	background: url("../img/txt_decor/Vector.svg") no-repeat;
+	background-size: contain;
+
+	z-index: -1;
 }
 .getmore-text {
 }
@@ -570,4 +576,5 @@ a {
 	display: flex;
 	gap: 32px;
 	align-items: center;
+
 }
